@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1024</width>
+        <height>600</height>
+      </rect>
+    </property>
+    <property name="minimumSize">
+      <size>
+        <width>800</width>
+        <height>480</height>
+      </size>
+    </property>
+    <property name="windowTitle">
+      <string>单目视觉目标测量装置</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="rootLayout">
+        <property name="spacing">
+          <number>10</number>
+        </property>
+        <property name="leftMargin">
+          <number>16</number>
+        </property>
+        <property name="rightMargin">
+          <number>16</number>
+        </property>
+        <item>
+          <layout class="QHBoxLayout" name="headerLayout">
+            <item>
+              <widget class="QLabel" name="titleLabel">
+                <property name="text">
+                  <string>单目视觉 · 目标测量</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <spacer name="headerSpacer">
+                <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                  <size>
+                    <width>40</width>
+                    <height>20</height>
+                  </size>
+                </property>
+              </spacer>
+            </item>
+            <item>
+              <widget class="QComboBox" name="modeCombo">
+                <property name="minimumSize">
+                  <size>
+                    <width>160</width>
+                    <height>44</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="reconnectButton">
+                <property name="text">
+                  <string>重连相机</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="exitButton">
+                <property name="text">
+                  <string>退出程序</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>96</width>
+                    <height>44</height>
+                  </size>
+                </property>
+                <property name="toolTip">
+                  <string>停止采集、释放相机并退出程序</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <layout class="QHBoxLayout" name="bodyLayout" stretch="7,4">
+            <item>
+              <widget class="QLabel" name="previewLabel">
+                <property name="minimumSize">
+                  <size>
+                    <width>280</width>
+                    <height>260</height>
+                  </size>
+                </property>
+                <property name="text">
+                  <string>等待相机画面</string>
+                </property>
+                <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <layout class="QVBoxLayout" name="controlLayout">
+                <item>
+                  <widget class="QScrollArea" name="controlScroll">
+                    <property name="widgetResizable">
+                      <bool>true</bool>
+                    </property>
+                    <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="minimumSize">
+                      <size>
+                        <width>300</width>
+                        <height>0</height>
+                      </size>
+                    </property>
+                    <widget class="QWidget" name="controlContents">
+                      <layout class="QVBoxLayout" name="scrollLayout">
+                        <property name="leftMargin">
+                          <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                          <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                          <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                          <number>0</number>
+                        </property>
+                        <item>
+                          <widget class="QGroupBox" name="resultBox">
+                            <property name="title">
+                              <string>测量结果</string>
+                            </property>
+                            <layout class="QGridLayout" name="resultLayout">
+                              <item row="0" column="0">
+                                <widget class="QLabel" name="distanceTitle">
+                                  <property name="text">
+                                    <string>相机距离</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item row="0" column="1">
+                                <widget class="QLabel" name="distanceLabel">
+                                  <property name="text">
+                                    <string>— cm</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item row="1" column="0">
+                                <widget class="QLabel" name="sizeTitle">
+                                  <property name="text">
+                                    <string>尺寸 x</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item row="1" column="1">
+                                <widget class="QLabel" name="sizeLabel">
+                                  <property name="text">
+                                    <string>— cm</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item row="2" column="0" colspan="2">
+                                <widget class="QLabel" name="detailLabel">
+                                  <property name="text">
+                                    <string>等待测量</string>
+                                  </property>
+                                  <property name="wordWrap">
+                                    <bool>true</bool>
+                                  </property>
+                                </widget>
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QGroupBox" name="digitBox">
+                            <property name="title">
+                              <string>发挥题 · 目标选择</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="digitBoxLayout">
+                              <item>
+                                <widget class="QPushButton" name="autoButton">
+                                  <property name="text">
+                                    <string>自动选择最小正方形</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item>
+                                <layout class="QGridLayout" name="digitLayout" />
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QLabel" name="powerLabel">
+                            <property name="text">
+                              <string>I / P / Pmax：传感器暂未接入</string>
+                            </property>
+                            <property name="wordWrap">
+                              <bool>true</bool>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </widget>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QPushButton" name="measureButton">
+                    <property name="text">
+                      <string>一键测量</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <widget class="QLabel" name="statusLabel">
+            <property name="minimumSize">
+              <size>
+                <width>0</width>
+                <height>40</height>
+              </size>
+            </property>
+            <property name="text">
+              <string>正在初始化…</string>
+            </property>
+            <property name="wordWrap">
+              <bool>true</bool>
+            </property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+  <resources />
+  <connections />
+</ui>

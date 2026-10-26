@@ -1,0 +1,82 @@
+{
+  "opencv": {
+    "canny_threshold1": 120,
+    "canny_threshold2": 200,
+    "pixels_per_mm": 2.0,
+    "min_paper_area_ratio": 0.015,
+    "max_reprojection_error_px": 3.0,
+    "threshold_mode": "fixed",
+    "binary_threshold": 100,
+    "blur_kernel": 3,
+    "contour_epsilon_ratio": 0.018,
+    "paper_border_coverage": 0.82
+  },
+
+  "hikrobot": {
+    "sdk_path": "/opt/MVS/Samples/aarch64/Python/MvImport",
+    "device_index": 0,
+    "width": 1280,
+    "height": 1024,
+    "fps": 20,
+    "exposure_time": 30000.0,
+    "gain": 12.0
+  },
+
+  "Camera": {
+    "backend": "hikrobot",
+    "source": 0,
+    "img_width": 1280,
+    "img_height": 1024,
+    "camera_matrix": [
+      1679.8481784627118,
+      0,
+      616.1867809329419,
+      0,
+      1679.927618958796,
+      514.3997253084443,
+      0,
+      0,
+      1
+    ],
+    "distortion_coefficients": [
+      -0.06375866650579437,
+      0.11429119435910026,
+      0.0003134950205754177,
+      -0.0009333724960193744,
+      0
+    ],
+    "calibrated": true
+  },
+
+  "measurement": {
+    "paper_width_mm": 200.0,
+    "paper_height_mm": 284.0,
+    "border_mm": 19.0,
+    "timeout_s": 4.5,
+    "samples": 3,
+    "max_spread_mm": 8.0,
+    "basic_size_range_mm": [
+      100,
+      160
+    ],
+    "square_size_range_mm": [
+      60,
+      120
+    ],
+    "digit_min_score": 0.4,
+    "digit_score_margin": 0.035,
+    "digit_font_paths": [
+      "/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman.ttf",
+      "/usr/share/fonts/truetype/liberation2/LiberationSerif-Regular.ttf",
+      "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    ]
+  },
+
+  "ui": {
+    "width": 600,
+    "height": 480,
+    "fullscreen": false
+  },
+
+  "output_dir": "../output/measurements"
+}
